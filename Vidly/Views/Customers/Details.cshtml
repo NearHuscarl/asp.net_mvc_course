@@ -1,3 +1,11 @@
 ﻿@model Vidly.Models.Customer
 
 <h1>@Model.Name</h1>
+
+<ul>
+    <li>Membership Type: @Model.MembershipType.Name</li>
+    @if (Model.Birthday.HasValue)
+    {
+        <li>Birthday: @Model.Birthday.Value.ToString("dd/MM/yyyy")</li>
+    }
+</ul>
