@@ -79,6 +79,16 @@ namespace Vidly.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Driving License")]
+        [StringLength(255)]
+        public string DrivingLicense { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        public string Phone { get; set; }
     }
 
     public class ResetPasswordViewModel
