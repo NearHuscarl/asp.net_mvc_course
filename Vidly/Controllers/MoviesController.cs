@@ -37,14 +37,9 @@ namespace Vidly.Controllers
             //return HttpNotFound();
         }
 
-        public ActionResult Index(int? pageIndex, string sortBy)
+        public ActionResult Index()
         {
-            if (!pageIndex.HasValue)
-                pageIndex = 1;
-            if (string.IsNullOrWhiteSpace(sortBy))
-                sortBy = "Name";
-
-            return View(_context.Movies.Include(m => m.Genre).ToList());
+            return View();
         }
 
         public ActionResult Details(int id)
